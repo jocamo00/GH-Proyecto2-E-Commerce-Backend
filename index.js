@@ -1,8 +1,10 @@
 //#region require
 const mongoose = require('mongoose')
-const express  = require('express');
-const cors     = require('cors')
-const app      = express();
+const express = require('express');
+const cors = require('cors')
+const app = express();
+
+const user = require('./routes/users');
 //#endregion
 
 
@@ -13,6 +15,7 @@ app.use('/public', express.static('public')) // para darle acceso desde el naveg
 
 
 // Rutas padre
+app.use('/api/users/', user);
 
 
 //#region Configuración del puerto
