@@ -5,6 +5,7 @@ const cors = require('cors')
 const app = express();
 
 const user = require('./routes/users');
+const auth = require('./routes/auths');
 //#endregion
 
 
@@ -15,7 +16,9 @@ app.use('/public', express.static('public')) // para darle acceso desde el naveg
 
 
 // Rutas padre
-app.use('/api/users/', user);
+app.use('/api/users', user);
+app.use('/api/auths', auth);
+
 
 
 //#region Configuración del puerto
