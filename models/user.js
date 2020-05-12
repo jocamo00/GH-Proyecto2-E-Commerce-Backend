@@ -1,73 +1,34 @@
-const jwt = require('jsonwebtoken')
+const      jwt = require('jsonwebtoken')
 const mongoose = require('mongoose')
 
 //#region Definición del schema user
 const userSchema = new mongoose.Schema({
     firstName: {
-        type: String,                       // tipo de dato
-        minlength: 1,                       // minima longitud
-        maxlength: 42,                      // maxima longitud
-        trim: true,                         // elimina espacios en blanco innecesarios
-        required: true,                     // si es obligatorio
+             type: String,                      
+        minlength: 1,                       
+        maxlength: 42            
     },
     lastName: {
-        type: String,                      
+             type: String,                      
         minlength: 1,                      
-        maxlength: 99,                  
-        trim: true,                         
-        required: true
+        maxlength: 99          
     },
     email: {
-        type: String,                      
+             type: String,                      
         minlength: 1,                      
-        maxlength: 99,                  
-        trim: true,
-        required: true,
-        unique: true                      
+        maxlength: 99,                 
+           unique: true                      
     },
     password: {
-        type: String,
+             type: String,
         minlength: 6,
-        maxlength: 99,
-        require: true
+        maxlength: 99
     },
     role: {
-        type: String,
+             type: String,
         minlength: 1,
-        maxlength: 42,
-        trim: true
+        maxlength: 42
     },
-    address: {
-        type: String,                      
-        minlength: 1,                      
-        maxlength: 99,                  
-        trim: true                        
-
-    },
-    country: {
-        type: String,                      
-        minlength: 1,                      
-        maxlength: 42,                  
-        trim: true                       
-
-    },
-    province: {
-        type: String,                      
-        minlength: 1,                      
-        maxlength: 42,                  
-        trim: true                      
-
-    },
-    zip: {
-        type: Number,                      
-        minlength: 5,                      
-        maxlength: 5,                  
-        trim: true                        
-        
-    },
-    /*imageUrl: {
-        type: String
-    },*/
 },
 {
     timestamps: true 
